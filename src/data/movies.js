@@ -38,5 +38,13 @@ export const movies= [
         "genre": "Comedy, Family, Fantasy, Adventures",
         "img": "https://m.media-amazon.com/images/M/MV5BNzY0ZTI4YjEtZjI4Yy00NDQyLThjNzctMzM5OWZlNTkwNTk3XkEyXkFqcGc@._V1_.jpg4",
         "date": ""
+    },
+    {
+        "id": "6",
+        "name": "Jungle Beat 2: The Past",
+        "description": "The animals from the African jungle fall through a time portal that the aliens forgot to close behind them. To return to the future, friends will need the help of dinosaurs. But the ancient lizards have their own problems. After all, their world is about to be invaded by cave aliens armed with clubs.",
+        "genre": "Adventures , Animation, Family",
+        "img": "https://m.media-amazon.com/images/M/MV5BYTUwZmFkOWEtN2Q0NS00NzcxLWI1NzUtZTExYWJhYThhNjZkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        "date": ""
     }
 ]
