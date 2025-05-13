@@ -6,7 +6,7 @@ function Header() {
     return (
         <header className="header">
             <div className="header-container">
-                <h1>Cinema App</h1>
+                <h1>CinemaHub</h1>
                 <nav>
                     <ul>
                         <li><Link to="/">Home</Link></li>

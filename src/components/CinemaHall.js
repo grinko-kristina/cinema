@@ -21,27 +21,41 @@ function CinemaHall() {
   const totalPrice = selectedSeats.length * seatPrice;
 
   const renderSeats = () => {
-    const seats = [];
+    const seatRows = [];
 
     for (let i = 0; i < rows; i++) {
       const row = rowLabels[i];
+      const rowSeats = [];
+
+      rowSeats.push(
+        <div key={`label-${row}`} className="row-label">
+          {row}
+        </div>
+      );
+
       for (let j = 0; j < cols; j++) {
         const seatId = `${row}${j + 1}`;
         const isSelected = selectedSeats.includes(seatId);
 
-        seats.push(
+        rowSeats.push(
           <div 
             key={seatId}
             className={`seat ${isSelected ? 'selected' : ''}`}
             onClick={() => handleSeatClick(seatId)}
           >
-            {seatId}
+            <div className="seat-number">{j + 1}</div>
           </div>
         );
       }
+
+      seatRows.push(
+        <div key={`row-${row}`} className="seat-row">
+          {rowSeats}
+        </div>
+      );
     }
 
-    return seats;
+    return seatRows;
   };
 
   return (
@@ -59,8 +73,10 @@ function CinemaHall() {
         </div>
       </div>
 
-      <div className="seats-grid">
-        {renderSeats()}
+      <div className="seats-container">
+        <div className="seats-grid">
+          {renderSeats()}
+        </div>
       </div>
 
       <div className="selected-seats">
