@@ -116,6 +116,22 @@
   background-color: #0D47A1;
 }
 
+.seat.booked {
+  background: linear-gradient(to bottom, #f44336, #d32f2f);
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.seat.booked::after {
+  background-color: #b71c1c;
+}
+
+.seat.booked:hover {
+  transform: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to bottom, #f44336, #d32f2f);
+}
+
 .selected-seats {
   margin-top: 40px;
   padding: 25px;
@@ -278,6 +294,49 @@
 
 .legend-selected::after {
   background-color: #0D47A1;
+}
+
+.legend-booked {
+  background: linear-gradient(to bottom, #f44336, #d32f2f);
+}
+
+.legend-booked::after {
+  background-color: #b71c1c;
+}
+
+.booking-success {
+  background-color: #e8f5e9;
+  border: 1px solid #66bb6a;
+  color: #2e7d32;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+  text-align: center;
+  font-weight: 500;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.booking-error {
+  background-color: #ffebee;
+  border: 1px solid #ef5350;
+  color: #c62828;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+  text-align: center;
+  font-weight: 500;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 768px) {

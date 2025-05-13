@@ -67,6 +67,45 @@
   text-align: left;
 }
 
+.session-selection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.session-date, .session-time {
+  flex: 1;
+  min-width: 250px;
+}
+
+.session-selection label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #1d3557;
+}
+
+.session-selection select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: white;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+}
+
 @media (max-width: 768px) {
   .movie-details {
     flex-direction: column;
