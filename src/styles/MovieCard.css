@@ -1,4 +1,3 @@
-/* MovieCard.css - Modern Design */
 
 .movie-card {
     background-color: white;
@@ -151,11 +150,6 @@
     align-items: center;
 }
 
-.movie-card-rating::before {
-    content: '★★★★☆';
-    margin-right: 0.5rem;
-    letter-spacing: 2px;
-}
 
 @media (max-width: 768px) {
     .movie-card-info {

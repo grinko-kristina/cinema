@@ -1,4 +1,3 @@
-/* MovieList.css - Modern Design */
 
 .movie-list-container {
     max-width: 1280px;
@@ -10,18 +9,6 @@
     text-align: center;
     margin-bottom: 3rem;
     position: relative;
-}
-
-.page-header::after {
-    content: '';
-    position: absolute;
-    bottom: -1.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background: var(--primary-color);
-    border-radius: 2px;
 }
 
 .page-header h1 {
@@ -79,7 +66,7 @@
     gap: 2.5rem;
 }
 
-/* Animation for cards */
+
 .movie-list > div {
     animation: fadeInUp 0.6s ease forwards;
     opacity: 0;
@@ -93,7 +80,7 @@
     }
 }
 
-/* Staggered animation delay for cards */
+
 .movie-list > div:nth-child(1) { animation-delay: 0.1s; }
 .movie-list > div:nth-child(2) { animation-delay: 0.2s; }
 .movie-list > div:nth-child(3) { animation-delay: 0.3s; }
@@ -102,7 +89,7 @@
 .movie-list > div:nth-child(6) { animation-delay: 0.6s; }
 .movie-list > div:nth-child(n+7) { animation-delay: 0.7s; }
 
-/* Empty state */
+
 .movie-list-empty {
     text-align: center;
     padding: 4rem 2rem;
@@ -124,7 +111,7 @@
     margin-bottom: 2rem;
 }
 
-/* Responsive design */
+
 @media (max-width: 1200px) {
     .movie-list {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
