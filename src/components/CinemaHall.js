@@ -28,7 +28,6 @@ function CinemaHall({ movieId, date, time }) {
 
   useEffect(() => {
     if (movieId && date && time) {
-      console.log(bookingService);
       const booked = bookingService.getBookedSeats(movieId, date, time);
       setBookedSeats(booked);
     }
@@ -68,10 +67,8 @@ function CinemaHall({ movieId, date, time }) {
       return;
     }
 
-    // Save selected seats to localStorage temporarily
     localStorage.setItem('tempSelectedSeats', JSON.stringify(selectedSeats));
 
-    // Show the booking form
     setShowForm(true);
   };
 
@@ -82,7 +79,6 @@ function CinemaHall({ movieId, date, time }) {
       [name]: value
     });
 
-    // Clear error when user types
     if (formErrors[name]) {
       setFormErrors({
         ...formErrors,
@@ -95,13 +91,11 @@ function CinemaHall({ movieId, date, time }) {
     let valid = true;
     const newErrors = { name: '', phone: '', email: '' };
 
-    // Validate name
     if (!formData.name.trim()) {
       newErrors.name = 'Name is required';
       valid = false;
     }
 
-    // Validate phone
     if (!formData.phone.trim()) {
       newErrors.phone = 'Phone number is required';
       valid = false;
@@ -110,7 +104,6 @@ function CinemaHall({ movieId, date, time }) {
       valid = false;
     }
 
-    // Validate email
     if (!formData.email.trim()) {
       newErrors.email = 'Email is required';
       valid = false;
@@ -128,21 +121,16 @@ function CinemaHall({ movieId, date, time }) {
 
     if (validateForm()) {
       try {
-        // Get selected seats from localStorage
         const seatsToBook = JSON.parse(localStorage.getItem('tempSelectedSeats')) || selectedSeats;
 
         const success = bookingService.saveBooking(movieId, date, time, seatsToBook);
 
         if (success) {
-          // Show success toast
           toast.success('Booking confirmed! Thank you for your purchase.');
-
           setBookingSuccess(true);
           setBookedSeats([...bookedSeats, ...seatsToBook]);
           setSelectedSeats([]);
           setShowForm(false);
-
-          // Clear temporary storage
           localStorage.removeItem('tempSelectedSeats');
         } else {
           toast.error('Failed to save booking. Please try again.');
@@ -158,7 +146,6 @@ function CinemaHall({ movieId, date, time }) {
 
   const handleCancelForm = () => {
     setShowForm(false);
-    // Clear temporary storage
     localStorage.removeItem('tempSelectedSeats');
   };
 
